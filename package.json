@@ -1,0 +1,25 @@
+{
+    "name": "typescript-demo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "gulp build",
+        "lite": "lite-server",
+        "start": "concurrent \"npm run build\" \"npm run lite\" "
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^2.0.0",
+        "gulp": "^3.9.1",
+        "jspm": "^0.16.29",
+        "lite-server": "^2.0.1",
+        "tsproject": "1.2.0-rc.4",
+        "typescript": "^1.7.5"
+    },
+    "dependencies": {
+        "angular": "^1.5.0",
+        "systemjs": "^0.19.22"
+    }
+}

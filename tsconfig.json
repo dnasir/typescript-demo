@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "system",
+        "noResolve": false,
+        "diagnostics": true,
+        "listFiles": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "bundles": {
+        "app": {
+            "files": [
+                "./app/app.ts",
+                "./typings/tsd.d.ts"
+            ],
+            "config": {
+                "outDir": "./bundles"
+            }
+        }
+    }
+}

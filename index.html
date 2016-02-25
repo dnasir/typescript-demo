@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>TypeScript Demo</title>
+</head>
+
+<body>
+    <div ng-controller="TodoCtrl as ctrl">
+        <form ng-submit="ctrl.addTodo()">
+            <input type="text" ng-model="ctrl.newTodo.name">
+        </form>
+        <ul>
+            <li ng-repeat="todo in ctrl.todos">
+                <input type="checkbox" ng-model="todo.done"> {{todo.name}}
+                <button ng-click="ctrl.removeTodo(todo)">Remove</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script>
+        System.defaultJSExtensions = true;
+        System.config({
+            baseURL: '/',
+            meta: {
+                'node_modules/angular/angular.js': {
+                    format: 'global',
+                    exports: 'angular'
+                },
+                // 'todo': {
+                //     deps: ['angular']
+                // }
+            },
+            map: {
+                'angular': 'node_modules/angular/angular.js'
+            }
+        });
+
+        // loads /app/main.js
+        System.import('bundles/app.js');
+    </script>
+</body>
+
+</html>
